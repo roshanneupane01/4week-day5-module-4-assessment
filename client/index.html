@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <body class="container">
+    <button id="complimentButton">Get a compliment</button>
+    <button id="fortuneButton">Get a random fortune</button>
+    <form id="goals">
+      <h2>!!! Are you looking for additional resources to learn software development? Wait no more. You are at the right place !!! 👇👇👇 </h2>
+      <p>Select one or more choices below:</p>
+      <input type="checkbox" name="Udemy" class="checkbox" />
+      <label for="udemyCheckBox">Udemy</label>
+      <input type="checkbox" name="Youtube" class="checkbox" />
+      <label for="youtubeCheckBox">Youtube</label>
+      <input type="checkbox" name="FreeCodeCamp" class="checkbox" />
+      <label for="freeCodeCampCheckBox">FreeCodeCamp</label>
+      <button type="submit">Add to my List</button>
+    </form>
+    <br>
+    <section>
+      <h3>Your list of choices</h3>
+      <ul id="list"></ul>
+    </section>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
