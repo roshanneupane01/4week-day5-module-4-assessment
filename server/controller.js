@@ -34,11 +34,12 @@ module.exports = {
   addChoiceToList: (req, res) => {
     const selectedChoices = req.body.choices;
 
+    // Filter the existing choices array to keep only the elements that are also present in the selectedChoices array. This ensures that we don't duplicate any choices that are already in the choices array on the server's end.
     choices = choices.filter((choice) => selectedChoices.includes(choice));
 
     // Merge the newly selected choices with the updated choices
     choices = [...new Set([...choices, ...selectedChoices])];
 
     res.status(200).send(choices);
-  },
+  }
 };
