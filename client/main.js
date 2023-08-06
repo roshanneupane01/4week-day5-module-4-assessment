@@ -1,23 +1,21 @@
-const complimentBtn = document.getElementById("complimentButton")
+const complimentBtn = document.getElementById("complimentButton");
 const getCompliment = () => {
-    axios.get("http://localhost:4000/api/compliment/")
-        .then(res => {
-            const data = res.data;
-            alert(data);
-    });
+  axios.get("http://localhost:4000/api/compliment/").then((res) => {
+    const data = res.data;
+    alert(data);
+  });
 };
-complimentBtn.addEventListener('click', getCompliment)
+complimentBtn.addEventListener("click", getCompliment);
 
 // -----------------Random Fortune-------------------
 const fortuneBtn = document.getElementById("fortuneButton");
-const getRandomFortune = event => {
-  event.preventDefault()
+const getRandomFortune = (event) => {
+  event.preventDefault();
   axios
-    .get("http://localhost:4000/api/fortune") 
+    .get("http://localhost:4000/api/fortune")
     .then((res) => {
       const fortune = res.data;
-      alert(fortune)
-
+      alert(fortune);
     })
     .catch((err) => {
       console.error(err);
@@ -33,10 +31,20 @@ const checkBoxChoices = document.querySelectorAll(".checkbox");
 
 const generateChoices = (list) => {
   choiceList.innerHTML = "";
-  list.forEach((item) => {
+  list.forEach((item, index) => {
     let li = document.createElement("li");
     li.innerText = item;
     choiceList.appendChild(li);
+    deleteChoices(choiceList, li, index);
+  });
+};
+
+const deleteChoices = (list, li, index) => {
+  let btnDelete = document.createElement("button");
+  btnDelete.innerText = "X";
+  li.appendChild(btnDelete);
+  btnDelete.addEventListener("click", () => {
+    list.removeChild(li);
   });
 };
 
@@ -72,7 +80,7 @@ const getChoices = () => {
       generateChoices(res.data);
     })
     .catch((err) => {
-      console.error(err);
+      console.error(err.message, "Don't worry, no choices selected yet:");
     });
 };
 
