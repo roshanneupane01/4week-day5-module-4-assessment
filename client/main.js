@@ -39,15 +39,6 @@ const generateChoices = (list) => {
   });
 };
 
-const deleteChoices = (list, li, index) => {
-  let btnDelete = document.createElement("button");
-  btnDelete.innerText = "X";
-  li.appendChild(btnDelete);
-  btnDelete.addEventListener("click", () => {
-    list.removeChild(li);
-  });
-};
-
 const addToList = (event) => {
   event.preventDefault();
   let selectedChoices = [];
@@ -68,6 +59,26 @@ const addToList = (event) => {
     .catch((err) => {
       console.error(err);
     });
+};
+
+const deleteChoices = (list, li) => {
+  let btnDelete = document.createElement("button");
+  btnDelete.innerText = "X";
+
+  const itemName = li.textContent.trim();
+
+  li.appendChild(btnDelete);
+
+  btnDelete.addEventListener("click", () => {
+    axios.delete(`http://localhost:4000/api/list/${encodeURIComponent(itemName)}`)
+      .then(() => {
+        list.removeChild(li);
+        console.log(`${itemName}, deleted!`)
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  });
 };
 
 form.addEventListener("submit", addToList);

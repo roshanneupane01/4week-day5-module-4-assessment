@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Back End Assessment</title>
-</head>
-<body class="container">
+  </head>
+  <body class="container">
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a random fortune</button>
     <form id="goals">
-        <h2>!!! Are you looking for additional resources to learn software development? Wait no more. You are at the
-            right place !!! 👇👇👇 </h2>
-        <p>Select one or more choices below:</p>
-        <input type="checkbox" name="Udemy" class="checkbox" />
-        <label for="udemyCheckBox">Udemy</label>
-        <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/" class="resource-link" target="_blank">Click here</a>
-        <br>
-        <input type="checkbox" name="Youtube" class="checkbox" />
-        <label for="youtubeCheckBox">Youtube</label>
-        <a href="https://www.youtube.com/watch?v=mqUN4N2q4qY&list=PLMwCFr4NqgMqeQs4i-bc5dxd2GJYLJZwx" target="_blank" class="resource-link">Click here</a>
-        <br>
-        <input type="checkbox" name="FreeCodeCamp" class="checkbox" />
-        <label for="freeCodeCampCheckBox">FreeCodeCamp</label>
-        <a href="https://www.freecodecamp.org/learn" target="_blank" class="resource-link">Click here</a>
-        <br>
-        <button type="submit">Add to my List</button>
+      <h2>
+        !!! Are you looking for additional resources to learn software
+        development? Wait no more. You are at the right place !!! 👇👇👇
+      </h2>
+      <p>Select one or more choices below:</p>
+      <input type="checkbox" name="Udemy" class="checkbox" />
+      <label for="udemyCheckBox">Udemy</label>
+      <a
+        href="https://www.udemy.com/course/the-complete-web-development-bootcamp/"
+        class="resource-link"
+        target="_blank"
+        >Click here</a
+      >
+      <br />
+      <input type="checkbox" name="Youtube" class="checkbox" />
+      <label for="youtubeCheckBox">Youtube</label>
+      <a
+        href="https://www.youtube.com/watch?v=mqUN4N2q4qY&list=PLMwCFr4NqgMqeQs4i-bc5dxd2GJYLJZwx"
+        target="_blank"
+        class="resource-link"
+        >Click here</a
+      >
+      <br />
+      <input type="checkbox" name="FreeCodeCamp" class="checkbox" />
+      <label for="freeCodeCampCheckBox">FreeCodeCamp</label>
+      <a
+        href="https://www.freecodecamp.org/learn"
+        target="_blank"
+        class="resource-link"
+        >Click here</a
+      >
+      <br />
+      <button type="submit">Add to my List</button>
     </form>
-    <br>
+    <br />
     <section>
-        <h3>Your list of choices</h3>
-        <ul id="list"></ul>
+      <h3>Your list of choices</h3>
+      <ul id="list"></ul>
     </section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

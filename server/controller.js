@@ -41,5 +41,18 @@ module.exports = {
     choices = [...new Set([...choices, ...selectedChoices])];
 
     res.status(200).send(choices);
-  }
+  },
+
+  deleteChoiceFromList: (req, res) => {
+    const choiceToDelete = req.params.value;
+    
+    const indexToDelete = choices.indexOf(choiceToDelete);
+    
+    if (indexToDelete !== -1) {
+      choices.splice(indexToDelete, 1);
+      res.status(200).send(choices);
+    } else {
+      res.status(404).send("Choice not found in the list.");
+    }
+  }    
 };
